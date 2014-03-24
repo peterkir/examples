@@ -1,0 +1,12 @@
+Private-Package: \
+	mainclass
+Service-Component: \
+	*
+-buildpath: \
+	osgi.core,\
+	osgi.cmpn,\
+	biz.aQute.bnd.annotation,\
+	${junit}
+Bundle-Version:0.0.0.${tstamp}
+-sub: \
+	*.bnd
