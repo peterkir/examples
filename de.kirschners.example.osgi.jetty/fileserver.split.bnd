@@ -1,0 +1,8 @@
+Bundle-Version:1.0.0.${tstamp;yyyyMMdd-HHmmss}
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Private-Package: \
+	de.kirschners.example.jetty.fileserver.split,\
+	de.kirschners.example.jetty.util
+Service-Component: \
+    *
+-includeresource: README=README

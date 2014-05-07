@@ -1,0 +1,37 @@
+-include: \
+    ${workspace}/cnf/libs/run.eclipse/run.eclipse-3.8.lib,\
+    ${workspace}/bndtools.runtime.bndrun/shared.bndrun,\
+    ${workspace}/bndtools.runtime.bndrun/shared.eclipse.bndrun
+
+-runee:JavaSE-1.7
+-runsystemcapabilities: ${native_capability}
+
+-resolve.effective: active
+
+# execute osgi:parseBundle from arguments
+#-runprogramargs: 
+
+-runproperties: \
+    launch.keep=false,\
+    launch.storage.dir=${project}/rt/launch,\
+    osgi.console=,\
+    eclipse.consoleLog=
+    
+-runbundles: \
+    ${run.eclipse-3.8},\
+    ${equinox.ds.bundles},\
+    ${felix.gogo.bundles},\
+\
+    biz.aQute.bnd.annotation,\
+    org.apache.felix.configadmin,\
+    org.apache.felix.metatype,\
+\
+    com.google.guava,\
+\
+    javax.servlet,\
+    org.eclipse.jetty.io;version=9,\
+    org.eclipse.jetty.http;version=9,\
+    org.eclipse.jetty.server;version=9,\
+    org.eclipse.jetty.util;version=9,\
+\
+    de.kirschners.example.osgi.jetty.fileserver.split;version=latest

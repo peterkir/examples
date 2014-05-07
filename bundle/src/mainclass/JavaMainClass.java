@@ -2,8 +2,8 @@ package mainclass;
 
 import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
-import java.util.Properties;
-import java.util.TreeMap;
+
+import fundamentals.classes.ClassImplementingAbstractClass;
 
 public class JavaMainClass {
 
@@ -11,22 +11,18 @@ public class JavaMainClass {
 
         long started = System.currentTimeMillis();
         System.out.println("Java program started at " + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S").format(started)
-                + " with the following ... ");
+                + " with the following ... \n");
 
-        System.out.println("\n### program arguments ###");
-        for (String arg: args) {
-            System.out.println(arg);
-        }
-
-        System.out.println("\n### system properties ###");
-        Properties sysProps = System.getProperties();
-        TreeMap<Object,Object> sortedSysProps = new TreeMap<>(sysProps);
-        for (Object key: sortedSysProps.keySet()) {
-            System.out.println(key + "=" + sortedSysProps.get(key));
-        }
+        new ClassImplementingAbstractClass().methodWithAllPrimitivesParam("a".getBytes()[0],
+                                                                          (short) 0,
+                                                                          1,
+                                                                          2l,
+                                                                          3.0f,
+                                                                          4.0d,
+                                                                          true,
+                                                                          'c');
 
         System.out.println(MessageFormat.format("\nexecution took {0} ms ", System.currentTimeMillis() - started));
 
     }
-
 }

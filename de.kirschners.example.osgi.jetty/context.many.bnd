@@ -1,0 +1,10 @@
+Bundle-Version:1.0.0.${tstamp;yyyyMMdd-HHmmss}
+Private-Package: \
+	de.kirschners.example.jetty.util,\
+	de.kirschners.example.jetty.context.many
+Service-Component: \
+	*
+Import-Package: \
+    javax.servlet;version=3.0,\
+    javax.servlet.http;version=3.0,\
+    *

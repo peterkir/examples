@@ -1,0 +1,14 @@
+-buildpath: \
+	ee.j2se;version=1.6,\
+	osgi.core;version=4.3,\
+	osgi.cmpn,\
+	biz.aQute.bnd.annotation,\
+	javax.servlet;version=3,\
+	org.eclipse.jetty.io;version=9,\
+	org.eclipse.jetty.http;version=9,\
+	org.eclipse.jetty.server;version=9,\
+	org.eclipse.jetty.servlet;version=9,\
+	org.eclipse.jetty.servlets;version=9,\
+	org.eclipse.jetty.util;version=9
+-sub: \
+	*.bnd

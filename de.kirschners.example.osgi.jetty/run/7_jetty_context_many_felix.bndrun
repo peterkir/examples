@@ -1,0 +1,65 @@
+-include: \
+    ${workspace}/bndtools.runtime.bndrun/shared.bndrun
+
+run.felix-4.2: \
+    org.apache.felix.configadmin;       version=1.6.0,\
+    org.apache.felix.log;               version=1.0.1,\
+    org.apache.felix.scr;               version=1.6.0,\
+    slf4j.simple;                       version=1.7.5,\
+    slf4j.api;                          version=1.7.5,\
+    osgi.cmpn;version=4.2,\
+\
+    biz.aQute.bnd.annotation,\
+    org.apache.felix.configadmin,\
+    org.apache.felix.metatype,\
+\
+    com.google.guava,\
+\
+    javax.servlet;version=3,\
+    javax.servlet-api;version=3.1,\
+    org.eclipse.jetty.continuation;version=9,\
+    org.eclipse.jetty.io;version=9,\
+    org.eclipse.jetty.http;version=9,\
+    org.eclipse.jetty.security;version=9,\
+    org.eclipse.jetty.server;version=9,\
+    org.eclipse.jetty.servlet;version=9,\
+    org.eclipse.jetty.servlets;version=9,\
+    org.eclipse.jetty.util;version=9,\
+\
+    org.apache.felix.gogo.runtime,\
+    org.apache.felix.gogo.shell,\
+    org.apache.felix.gogo.command,\
+\
+    org.apache.felix.http.jetty,\
+    org.apache.felix.http.whiteboard,\
+    org.apache.felix.http.bridge,\
+\
+    org.apache.felix.webconsole;version=4.2.0,\
+    org.apache.felix.webconsole.plugins.ds,\
+    org.apache.felix.webconsole.plugins.event,\
+    org.apache.felix.webconsole.plugins.packageadmin,\
+\
+    de.kirschners.example.osgi.jetty.context.many;version=latest
+
+build.felix-4.2: \
+    org.apache.felix.framework;version='[4,5)',\
+    ${run.felix-4.2}
+    
+
+-runfw: org.apache.felix.framework;version='[4,5)'
+-runee: JavaSE-1.6
+-runsystemcapabilities: ${native_capability}
+
+-resolve.effective: active
+
+-runbundles:\
+    ${run.felix-4.2},\
+    ${felix.gogo.bundles}
+    
+#-runprogramargs: 
+
+-runproperties: \
+    launch.keep=false,\
+    launch.storage.dir=${project}/rt/launch,\
+    osgi.console=
+
